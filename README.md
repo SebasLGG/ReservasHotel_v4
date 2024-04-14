@@ -1,6 +1,6 @@
 # Tarea: Reservas Hotel V4
-## Profesor: 
-## Alumno:
+## Profesor: Andrés Rubio del Río
+## Alumno: Sebastián Luis Galindo González
 
 Nuestro cliente está muy satisfecho de como está quedando la aplicación. Sin embargo, nos acaba de comentar que por favor 
 añadamos persistencia a los datos introducidos, ya que tal y como está ahora la aplicación no es **funcional**. Por tanto, en 
