@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.reservashotel.modelo.dominio;
 
-import org.iesalandalus.programacion.reservashotel.modelo.dominio.Huesped;
+
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -13,15 +13,15 @@ public class HuespedTest {
 
     private static final String NOMBRE_NO_ESPERADO = "El nombre devuelto no es el mismo que el pasado al constructor.";
     private static final String DNI_NO_ESPERADO = "El DNI devuelto no es el mismo que el pasado al constructor.";
-    private static final String TELEFONO_NO_ESPERADO = "El telÈfono devuelto no es el mismo que el pasado al constructor.";
+    private static final String TELEFONO_NO_ESPERADO = "El tel√©fono devuelto no es el mismo que el pasado al constructor.";
     private static final String CORREO_NO_ESPERADO = "El correo devuelto no es el mismo que el pasado al constructor.";
     private static final String FECHA_NACIMIENTO_NO_ESPERADA = "La fecha de nacimiento devuelta no es la misma que la pasada al constructor.";
-    private static final String NOMBRE_JRJR = "JosÈ RamÛn JimÈnez Reyes";
+    private static final String NOMBRE_JRJR = "Jos√© Ram√≥n Jim√©nez Reyes";
     private static final String DNI_JRJR = "11223344B";
     private static final String TELEFONO_JRJR = "950112233";
     private static final String CORREO_JRJR = "joseramon.jimenez@iesalandalus.org";
-    private static final String NOMBRE_MAL_ARDR = "  ANDR…S   RuBiO   dEl             rÌo";
-    private static final String NOMBRE_ARDR = "AndrÈs Rubio Del RÌo";
+    private static final String NOMBRE_MAL_ARDR = "  ANDR√âS   RuBiO   dEl             r√≠o";
+    private static final String NOMBRE_ARDR = "Andr√©s Rubio Del R√≠o";
     private static final String DNI_ARDR = "22334455Y";
     private static final String TELEFONO_ARDR = "666223344";
     private static final String CORREO_ARDR = "andres.rubio@iesalandalus.org";
@@ -29,29 +29,29 @@ public class HuespedTest {
     private static final LocalDate FECHA_NACIMIENTO_JRJR=LocalDate.of(2002, 9, 15);
     private static final LocalDate FECHA_NACIMIENTO_ARDR=LocalDate.of(1992, 7, 3);
     private static final String FORMATO_FECHA="dd/MM/yyyy";
-    private static final String TIPO_EXCEPCION_NO_CORRECTA = "El tipo de la excepciÛn no es correcto.";
-    private static final String NOMBRE_INCORRECTO = "DeberÌa haber saltado una excepciÛn indicando que el nombre es incorrecto";
-    private static final String ERROR_NOMBRE_NULO = "ERROR: El nombre de un huÈsped no puede ser nulo.";
-    private static final String ERROR_NOMBRE_NO_VALIDO = "ERROR: El nombre de un huÈsped no puede estar vacÌo.";
-    private static final String DNI_INCORRECTO = "DeberÌa haber saltado una excepciÛn indicando que el DNI es incorrecto";
-    private static final String ERROR_DNI_NULO = "ERROR: El dni de un huÈsped no puede ser nulo.";
-    private static final String ERROR_DNI_NO_VALIDO = "ERROR: El dni del huÈsped no tiene un formato v·lido.";
-    private static final String ERROR_CORREO_NULO = "ERROR: El correo de un huÈsped no puede ser nulo.";
-    private static final String CORREO_INCORRECTO = "DeberÌa haber saltado una excepciÛn indicando que el correo es incorrecto";
-    private static final String ERROR_CORREO_NO_VALIDO = "ERROR: El correo del huÈsped no tiene un formato v·lido.";
-    private static final String ERROR_TELEFONO_NO_VALIDO = "ERROR: El telÈfono del huÈsped no tiene un formato v·lido.";
+    private static final String TIPO_EXCEPCION_NO_CORRECTA = "El tipo de la excepci√≥n no es correcto.";
+    private static final String NOMBRE_INCORRECTO = "Deber√≠a haber saltado una excepci√≥n indicando que el nombre es incorrecto";
+    private static final String ERROR_NOMBRE_NULO = "ERROR: El nombre de un hu√©sped no puede ser nulo.";
+    private static final String ERROR_NOMBRE_NO_VALIDO = "ERROR: El nombre de un hu√©sped no puede estar vac√≠o.";
+    private static final String DNI_INCORRECTO = "Deber√≠a haber saltado una excepci√≥n indicando que el DNI es incorrecto";
+    private static final String ERROR_DNI_NULO = "ERROR: El dni de un hu√©sped no puede ser nulo.";
+    private static final String ERROR_DNI_NO_VALIDO = "ERROR: El dni del hu√©sped no tiene un formato v√°lido.";
+    private static final String ERROR_CORREO_NULO = "ERROR: El correo de un hu√©sped no puede ser nulo.";
+    private static final String CORREO_INCORRECTO = "Deber√≠a haber saltado una excepci√≥n indicando que el correo es incorrecto";
+    private static final String ERROR_CORREO_NO_VALIDO = "ERROR: El correo del hu√©sped no tiene un formato v√°lido.";
+    private static final String ERROR_TELEFONO_NO_VALIDO = "ERROR: El tel√©fono del hu√©sped no tiene un formato v√°lido.";
 
-    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepciÛn no es correcto.";
-    private static final String OBJETO_DEBERIA_SER_NULO = "No se deberÌa haber creado el objeto huÈsped.";
-    private static final String ERROR_LETRA_DNI_NO_VALIDA = "ERROR: La letra del dni del huÈsped no es correcta.";
-    private static final String TELEFONO_INCORRECTO = "DeberÌa haber saltado una excepciÛn indicando que el telÈfono es incorrecto";
+    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepci√≥n no es correcto.";
+    private static final String OBJETO_DEBERIA_SER_NULO = "No se deber√≠a haber creado el objeto hu√©sped.";
+    private static final String ERROR_LETRA_DNI_NO_VALIDA = "ERROR: La letra del dni del hu√©sped no es correcta.";
+    private static final String TELEFONO_INCORRECTO = "Deber√≠a haber saltado una excepci√≥n indicando que el tel√©fono es incorrecto";
 
-    private static final String ERROR_TELEFONO_NULO = "ERROR: El telÈfono de un huÈsped no puede ser nulo.";
-    private static final String FECHA_NACIMIENTO_INCORRECTA = "DeberÌa haber saltado una excepciÛn indicando que la fecha de nacimiento es incorrecta";
-    private static final String ERROR_FECHA_NULA = "ERROR: La fecha de nacimiento de un huÈsped no puede ser nula.";
-    private static final String HUESPED_NO_ESPERADO = "El huÈsped copiado deberÌa ser el mismo que el pasado como par·metro.";
-    private static final String HUESPED_NULO = "DeberÌa haber saltado una excepciÛn indicando que no se puede copiar un huÈsped nulo.";
-    private static final String ERROR_COPIAR_HUESPED_NULO = "ERROR: No es posible copiar un huÈsped nulo.";
+    private static final String ERROR_TELEFONO_NULO = "ERROR: El tel√©fono de un hu√©sped no puede ser nulo.";
+    private static final String FECHA_NACIMIENTO_INCORRECTA = "Deber√≠a haber saltado una excepci√≥n indicando que la fecha de nacimiento es incorrecta";
+    private static final String ERROR_FECHA_NULA = "ERROR: La fecha de nacimiento de un hu√©sped no puede ser nula.";
+    private static final String HUESPED_NO_ESPERADO = "El hu√©sped copiado deber√≠a ser el mismo que el pasado como par√°metro.";
+    private static final String HUESPED_NULO = "Deber√≠a haber saltado una excepci√≥n indicando que no se puede copiar un hu√©sped nulo.";
+    private static final String ERROR_COPIAR_HUESPED_NULO = "ERROR: No es posible copiar un hu√©sped nulo.";
 
     @Test
     public void constructorNombreValidoDniValidoCorreoValidoTelefonoValidoFechaNacimientoValidaCreaHuespedCorrectamente() {
@@ -374,9 +374,9 @@ public class HuespedTest {
         Huesped huesped = new Huesped(NOMBRE_JRJR, DNI_JRJR, CORREO_JRJR, TELEFONO_JRJR, FECHA_NACIMIENTO_JRJR);
 
 
-        assertEquals(String.format("nombre=%s (%s), DNI=%s, correo=%s, telÈfono=%s, fecha nacimiento=%s", NOMBRE_JRJR, "JRJR", DNI_JRJR, CORREO_JRJR, TELEFONO_JRJR, FECHA_NACIMIENTO_JRJR.format(DateTimeFormatter.ofPattern(FORMATO_FECHA))), huesped.toString(), CADENA_NO_ESPERADA);
+        assertEquals(String.format("nombre=%s (%s), DNI=%s, correo=%s, tel√©fono=%s, fecha nacimiento=%s", NOMBRE_JRJR, "JRJR", DNI_JRJR, CORREO_JRJR, TELEFONO_JRJR, FECHA_NACIMIENTO_JRJR.format(DateTimeFormatter.ofPattern(FORMATO_FECHA))), huesped.toString(), CADENA_NO_ESPERADA);
 
         huesped = new Huesped(NOMBRE_MAL_ARDR, DNI_ARDR, CORREO_ARDR, TELEFONO_ARDR, FECHA_NACIMIENTO_ARDR);
-        assertEquals(String.format("nombre=%s (%s), DNI=%s, correo=%s, telÈfono=%s, fecha nacimiento=%s", NOMBRE_ARDR, "ARDR", DNI_ARDR, CORREO_ARDR, TELEFONO_ARDR, FECHA_NACIMIENTO_ARDR.format(DateTimeFormatter.ofPattern(FORMATO_FECHA))), huesped.toString(), CADENA_NO_ESPERADA);
+        assertEquals(String.format("nombre=%s (%s), DNI=%s, correo=%s, tel√©fono=%s, fecha nacimiento=%s", NOMBRE_ARDR, "ARDR", DNI_ARDR, CORREO_ARDR, TELEFONO_ARDR, FECHA_NACIMIENTO_ARDR.format(DateTimeFormatter.ofPattern(FORMATO_FECHA))), huesped.toString(), CADENA_NO_ESPERADA);
     }
 }

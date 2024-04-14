@@ -11,28 +11,28 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class HuespedesTest {
 
-    private static final String ERROR_INSERTAR_HUESPED_NULO = "ERROR: No se puede insertar un huésped nulo.";
-    private static final String ERROR_BORRAR_HUESPED_NULO = "ERROR: No se puede borrar un huésped nulo.";
+    private static final String ERROR_INSERTAR_HUESPED_NULO = "ERROR: No se puede insertar un huÃ©sped nulo.";
+    private static final String ERROR_BORRAR_HUESPED_NULO = "ERROR: No se puede borrar un huÃ©sped nulo.";
 
-    private static final String ERROR_HUESPED_EXISTE = "ERROR: Ya existe un huésped con ese dni.";
-    private static final String ERROR_HUESPED_BORRAR_NO_EXISTE = "ERROR: No existe ningún huésped como el indicado.";
+    private static final String ERROR_HUESPED_EXISTE = "ERROR: Ya existe un huÃ©sped con ese dni.";
+    private static final String ERROR_HUESPED_BORRAR_NO_EXISTE = "ERROR: No existe ningÃºn huÃ©sped como el indicado.";
 
-    private static final String OPERACION_NO_PERMITIDA = "Debería haber saltado una excepción indicando que dicha operación no está permitida.";
-    private static final String HUESPED_NULO = "Debería haber saltado una excepción indicando que no se puede operar con un huésped nulo.";
-    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepción no es correcto.";
-    private static final String TIPO_EXCEPCION_NO_CORRECTO = "El tipo de la excepción no es correcto.";
-    private static final String EXCEPCION_NO_PROCEDE = "No debería haber saltado la excepción.";
-    private static final String OPERACION_NO_REALIZADA = "La operación no la ha realizado correctamente.";
-    private static final String HUESPEDES_NO_CREADOS = "Debería haber creado los huéspedes correctamente.";
+    private static final String OPERACION_NO_PERMITIDA = "DeberÃ­a haber saltado una excepciÃ³n indicando que dicha operaciÃ³n no estÃ¡ permitida.";
+    private static final String HUESPED_NULO = "DeberÃ­a haber saltado una excepciÃ³n indicando que no se puede operar con un huÃ©sped nulo.";
+    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepciÃ³n no es correcto.";
+    private static final String TIPO_EXCEPCION_NO_CORRECTO = "El tipo de la excepciÃ³n no es correcto.";
+    private static final String EXCEPCION_NO_PROCEDE = "No deberÃ­a haber saltado la excepciÃ³n.";
+    private static final String OPERACION_NO_REALIZADA = "La operaciÃ³n no la ha realizado correctamente.";
+    private static final String HUESPEDES_NO_CREADOS = "DeberÃ­a haber creado los huÃ©spedes correctamente.";
     private static final String REFERENCIA_NO_ESPERADA = "La referencia devuelta es la misma que la pasada.";
-    private static final String TAMANO_NO_ESPERADO = "El tamaño devuelto no es el esperado.";
-    private static final String HUESPED_NO_ESPERADO = "El huésped devuelto no es el que debería ser.";
-    private static final String NOMBRE_JRJR = "José Ramón Jiménez Reyes";
+    private static final String TAMANO_NO_ESPERADO = "El tamaÃ±o devuelto no es el esperado.";
+    private static final String HUESPED_NO_ESPERADO = "El huÃ©sped devuelto no es el que deberÃ­a ser.";
+    private static final String NOMBRE_JRJR = "JosÃ© RamÃ³n JimÃ©nez Reyes";
     private static final String DNI_JRJR = "11223344B";
     private static final String TELEFONO_JRJR = "950112233";
     private static final String CORREO_JRJR = "joseramon.jimenez@iesalandalus.org";
     private static final LocalDate FECHA_NACIMIENTO_JRJR=LocalDate.of(2002, 9, 15);
-    private static final String NOMBRE_ARDR = "Andrés Rubio Del Río";
+    private static final String NOMBRE_ARDR = "AndrÃ©s Rubio Del RÃ­o";
     private static final String DNI_ARDR = "22334455Y";
     private static final String TELEFONO_ARDR = "666223344";
     private static final String CORREO_ARDR = "andres.rubio@iesalandalus.org";
@@ -42,7 +42,7 @@ public class HuespedesTest {
     private static final String TELEFONO_BE = "600334455";
     private static final String CORREO_BE = "bog.esponja@iesalandalus.org";
     private static final LocalDate FECHA_NACIMIENTO_BE=LocalDate.of(1996, 10, 30);
-    private static final String MENSAJE_ERROR_BUSCAR_HUESPED_NULO = "ERROR: No se puede buscar un huésped nulo.";
+    private static final String MENSAJE_ERROR_BUSCAR_HUESPED_NULO = "ERROR: No se puede buscar un huÃ©sped nulo.";
 
 
     private static Huesped huesped1;

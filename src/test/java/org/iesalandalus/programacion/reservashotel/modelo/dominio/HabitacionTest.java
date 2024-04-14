@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.reservashotel.modelo.dominio;
 
-import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,51 +8,51 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 public class HabitacionTest {
     private static final String CADENA_NO_ESPERADA = "La cadena devuelta no es la esperada.";
-    private static final String PLANTA_NO_ESPERADA = "El n鷐ero de planta devuelta no es la misma que la pasada al constructor.";
-    private static final String PUERTA_NO_ESPERADA = "El n鷐ero de puerta devuelta no es la misma que la pasada al constructor.";
+    private static final String PLANTA_NO_ESPERADA = "El n煤mero de planta devuelta no es la misma que la pasada al constructor.";
+    private static final String PUERTA_NO_ESPERADA = "El n煤mero de puerta devuelta no es la misma que la pasada al constructor.";
     private static final String PRECIO_HABITACION_NO_ESPERADO = "El precio devuelto no es el mismo que el pasada al constructor.";
-    private static final String IDENTIFICADOR_HABITACION_NO_ESPERADO = "El identificador de la habitaci髇 no es el esperado.";
+    private static final String IDENTIFICADOR_HABITACION_NO_ESPERADO = "El identificador de la habitaci贸n no es el esperado.";
 
     private static final int PLANTA_1=1;
     private static final int PUERTA_0=0;
     private static final int PUERTA_10=10;
 
     private static final double PRECIO_HABITACION_VALIDO=50;
-    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepci髇 no es correcto.";
-    private static final String OBJETO_DEBERIA_SER_NULO = "No se deber韆 haber creado el objeto habitaci髇.";
-    private static final String TIPO_EXCEPCION_NO_CORRECTA = "El tipo de la excepci髇 no es correcto.";
+    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepci贸n no es correcto.";
+    private static final String OBJETO_DEBERIA_SER_NULO = "No se deber铆a haber creado el objeto habitaci贸n.";
+    private static final String TIPO_EXCEPCION_NO_CORRECTA = "El tipo de la excepci贸n no es correcto.";
 
-    private static final String PLANTA_INCORRECTA = "Deber韆 haber saltado una excepci髇 indicando que la planta es incorrecta.";
-    private static final String ERROR_PLANTA_INCORRECTA= "ERROR: No se puede establecer como planta de una habitaci髇 un valor menor que " + Habitacion.MIN_NUMERO_PLANTA + " ni mayor que " + Habitacion.MAX_NUMERO_PLANTA + ".";
-    private static final String PUERTA_INCORRECTA="Deber韆 haber saltado una excepci髇 indicando que la puerta es incorrecta.";
-    private static final String ERROR_PUERTA_INCORRECTA= "ERROR: No se puede establecer como puerta de una habitaci髇 un valor menor que " + Habitacion.MIN_NUMERO_PUERTA + " ni mayor que " + Habitacion.MAX_NUMERO_PUERTA + ".";
+    private static final String PLANTA_INCORRECTA = "Deber铆a haber saltado una excepci贸n indicando que la planta es incorrecta.";
+    private static final String ERROR_PLANTA_INCORRECTA= "ERROR: No se puede establecer como planta de una habitaci贸n un valor menor que " + Habitacion.MIN_NUMERO_PLANTA + " ni mayor que " + Habitacion.MAX_NUMERO_PLANTA + ".";
+    private static final String PUERTA_INCORRECTA="Deber铆a haber saltado una excepci贸n indicando que la puerta es incorrecta.";
+    private static final String ERROR_PUERTA_INCORRECTA= "ERROR: No se puede establecer como puerta de una habitaci贸n un valor menor que " + Habitacion.MIN_NUMERO_PUERTA + " ni mayor que " + Habitacion.MAX_NUMERO_PUERTA + ".";
 
-    private static final String PRECIO_HABITACION_INCORRECTO= "Deber韆 haber saltado una excepci髇 indicando que el precio de la habitaci髇 es incorrecto.";
-    private static final String ERROR_PRECIO_HABITACION_INCORRECTO= "ERROR: No se puede establecer como precio de una habitaci髇 un valor menor que " + Habitacion.MIN_PRECIO_HABITACION + " ni mayor que " + Habitacion.MAX_PRECIO_HABITACION + ".";
-    private static final String HABITACION_NO_ESPERADA = "La habitaci髇 copiada deber韆 ser la misma que la pasada como par醡etro.";
+    private static final String PRECIO_HABITACION_INCORRECTO= "Deber铆a haber saltado una excepci贸n indicando que el precio de la habitaci贸n es incorrecto.";
+    private static final String ERROR_PRECIO_HABITACION_INCORRECTO= "ERROR: No se puede establecer como precio de una habitaci贸n un valor menor que " + Habitacion.MIN_PRECIO_HABITACION + " ni mayor que " + Habitacion.MAX_PRECIO_HABITACION + ".";
+    private static final String HABITACION_NO_ESPERADA = "La habitaci贸n copiada deber铆a ser la misma que la pasada como par谩metro.";
 
-    private static final String HABITACION_NULA = "Deber韆 haber saltado una excepci髇 indicando que no se puede copiar una habitaci髇 nula.";
-    private static final String ERROR_COPIAR_HABITACION_NULA = "ERROR: No es posible copiar una habitaci髇 nula.";
+    private static final String HABITACION_NULA = "Deber铆a haber saltado una excepci贸n indicando que no se puede copiar una habitaci贸n nula.";
+    private static final String ERROR_COPIAR_HABITACION_NULA = "ERROR: No es posible copiar una habitaci贸n nula.";
 
-    private static final String NUM_MAXIMO_PERSONAS_NO_ESPERADO="ERROR: El n鷐ero m醲imo de personas no es el esperado.";
+    private static final String NUM_MAXIMO_PERSONAS_NO_ESPERADO="ERROR: El n煤mero m谩ximo de personas no es el esperado.";
 
-    private static final String NUM_BANOS_INCORRECTO="ERROR: El n鷐ero de ba駉s de la habitaci髇 no es el correcto.";
+    private static final String NUM_BANOS_INCORRECTO="ERROR: El n煤mero de ba帽os de la habitaci贸n no es el correcto.";
 
-    private static final String NUM_CAMAS_INCORRECTO="ERROR: El n鷐ero de camas de la habitaci髇 no es el correcto.";
-    private static final String ERROR_NUM_BANOS_HABITACION_SUITE_INCORRECTO="ERROR: El n鷐ero de ba駉s no puede ser inferior a " + Suite.MIN_NUM_BANOS + " ni superior a " + Suite.MAX_NUM_BANOS;
-    private static final String ERROR_NUM_BANOS_HABITACION_TRIPLE_INCORRECTO="ERROR: El n鷐ero de ba駉s no puede ser inferior a " + Triple.MIN_NUM_BANOS +" ni superior a " + Triple.MAX_NUM_BANOS;
+    private static final String NUM_CAMAS_INCORRECTO="ERROR: El n煤mero de camas de la habitaci贸n no es el correcto.";
+    private static final String ERROR_NUM_BANOS_HABITACION_SUITE_INCORRECTO="ERROR: El n煤mero de ba帽os no puede ser inferior a " + Suite.MIN_NUM_BANOS + " ni superior a " + Suite.MAX_NUM_BANOS;
+    private static final String ERROR_NUM_BANOS_HABITACION_TRIPLE_INCORRECTO="ERROR: El n煤mero de ba帽os no puede ser inferior a " + Triple.MIN_NUM_BANOS +" ni superior a " + Triple.MAX_NUM_BANOS;
 
-    private static final String ERROR_NUM_CAMAS_INDIVIDUALES_HABITACION_DOBLE_INCORRECTO="ERROR: El n鷐ero de camas individuales de una habitaci髇 doble no puede ser inferior a " + Doble.MIN_NUM_CAMAS_INDIVIDUALES + " ni mayor que " + Doble.MAX_NUM_CAMAS_INDIVIDUALES;
+    private static final String ERROR_NUM_CAMAS_INDIVIDUALES_HABITACION_DOBLE_INCORRECTO="ERROR: El n煤mero de camas individuales de una habitaci贸n doble no puede ser inferior a " + Doble.MIN_NUM_CAMAS_INDIVIDUALES + " ni mayor que " + Doble.MAX_NUM_CAMAS_INDIVIDUALES;
 
-    private static final String ERROR_NUM_CAMAS_DOBLE_HABITACION_DOBLE_INCORRECTO="ERROR: El n鷐ero de camas dobles de una habitaci髇 doble no puede ser inferior a " + Doble.MIN_NUM_CAMAS_DOBLES + " ni mayor que " + Doble.MAX_NUM_CAMAS_DOBLES;
+    private static final String ERROR_NUM_CAMAS_DOBLE_HABITACION_DOBLE_INCORRECTO="ERROR: El n煤mero de camas dobles de una habitaci贸n doble no puede ser inferior a " + Doble.MIN_NUM_CAMAS_DOBLES + " ni mayor que " + Doble.MAX_NUM_CAMAS_DOBLES;
 
-    private static final String ERROR_NUM_CAMAS_INDIVIDUALES_HABITACION_TRIPLE_INCORRECTO="ERROR: El n鷐ero de camas individuales de una habitaci髇 triple no puede ser inferior a " + Triple.MIN_NUM_CAMAS_INDIVIDUALES + " ni mayor que " + Triple.MAX_NUM_CAMAS_INDIVIDUALES;
+    private static final String ERROR_NUM_CAMAS_INDIVIDUALES_HABITACION_TRIPLE_INCORRECTO="ERROR: El n煤mero de camas individuales de una habitaci贸n triple no puede ser inferior a " + Triple.MIN_NUM_CAMAS_INDIVIDUALES + " ni mayor que " + Triple.MAX_NUM_CAMAS_INDIVIDUALES;
 
-    private static final String ERROR_NUM_CAMAS_DOBLE_HABITACION_TRIPLE_INCORRECTO="ERROR: El n鷐ero de camas dobles de una habitaci髇 triple no puede ser inferior a " + Triple.MIN_NUM_CAMAS_DOBLES + " ni mayor que " + Triple.MAX_NUM_CAMAS_DOBLES;
+    private static final String ERROR_NUM_CAMAS_DOBLE_HABITACION_TRIPLE_INCORRECTO="ERROR: El n煤mero de camas dobles de una habitaci贸n triple no puede ser inferior a " + Triple.MIN_NUM_CAMAS_DOBLES + " ni mayor que " + Triple.MAX_NUM_CAMAS_DOBLES;
 
-    private static final String ERROR_DISTRIBUCION_CAMAS_HABITACION_DOBLE_INCORRECTO="ERROR: La distribuci髇 de camas en una habitaci髇 doble tiene que ser " + Doble.MAX_NUM_CAMAS_INDIVIDUALES +" camas individuales y " + Doble.MIN_NUM_CAMAS_DOBLES + " doble o " + Doble.MIN_NUM_CAMAS_INDIVIDUALES + " camas individuales y " + Doble.MAX_NUM_CAMAS_DOBLES + " doble";
+    private static final String ERROR_DISTRIBUCION_CAMAS_HABITACION_DOBLE_INCORRECTO="ERROR: La distribuci贸n de camas en una habitaci贸n doble tiene que ser " + Doble.MAX_NUM_CAMAS_INDIVIDUALES +" camas individuales y " + Doble.MIN_NUM_CAMAS_DOBLES + " doble o " + Doble.MIN_NUM_CAMAS_INDIVIDUALES + " camas individuales y " + Doble.MAX_NUM_CAMAS_DOBLES + " doble";
 
-    private static final String ERROR_DISTRIBUCION_CAMAS_HABITACION_TRIPLE_INCORRECTO="ERROR: La distribuci髇 de camas en una habitaci髇 triple tiene que ser " + Triple.MAX_NUM_CAMAS_INDIVIDUALES +" camas individuales y " + Triple.MIN_NUM_CAMAS_DOBLES + " doble o " + Triple.MIN_NUM_CAMAS_INDIVIDUALES + " cama individual y " + Triple.MAX_NUM_CAMAS_DOBLES + " doble";
+    private static final String ERROR_DISTRIBUCION_CAMAS_HABITACION_TRIPLE_INCORRECTO="ERROR: La distribuci贸n de camas en una habitaci贸n triple tiene que ser " + Triple.MAX_NUM_CAMAS_INDIVIDUALES +" camas individuales y " + Triple.MIN_NUM_CAMAS_DOBLES + " doble o " + Triple.MIN_NUM_CAMAS_INDIVIDUALES + " cama individual y " + Triple.MAX_NUM_CAMAS_DOBLES + " doble";
 
     @Test
     public void constructorPlantaValidaPuertaValidaPrecioValidoCreaHabitacionSimpleCorrectamente() {
@@ -403,7 +403,7 @@ public class HabitacionTest {
     public void toStringDevuelveLaCadenaEsperadaHabitacionSimple() {
         Simple habitacion = new Simple(PLANTA_1, PUERTA_0, PRECIO_HABITACION_VALIDO);
 
-        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci髇=%s, habitaci髇 simple, capacidad=%d personas",
+        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci贸n=%s, habitaci贸n simple, capacidad=%d personas",
                 habitacion.getIdentificador(), habitacion.getPlanta(), habitacion.getPuerta(), habitacion.getPrecio(),
                 habitacion.getNumeroMaximoPersonas()), habitacion.toString(), CADENA_NO_ESPERADA);
     }
@@ -412,7 +412,7 @@ public class HabitacionTest {
     public void toStringDevuelveLaCadenaEsperadaHabitacionDoble() {
         Doble habitacion = new Doble(PLANTA_1, PUERTA_0, PRECIO_HABITACION_VALIDO,2,0);
 
-        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci髇=%s, habitaci髇 doble, capacidad=%d personas, " +
+        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci贸n=%s, habitaci贸n doble, capacidad=%d personas, " +
                         "camas individuales=%d, camas dobles=%d",
                 habitacion.getIdentificador(), habitacion.getPlanta(), habitacion.getPuerta(), habitacion.getPrecio(),
                 habitacion.getNumeroMaximoPersonas(),habitacion.getNumCamasIndividuales(),habitacion.getNumCamasDobles()), habitacion.toString(), CADENA_NO_ESPERADA);
@@ -422,8 +422,8 @@ public class HabitacionTest {
     public void toStringDevuelveLaCadenaEsperadaHabitacionTriple() {
         Triple habitacion = new Triple(PLANTA_1, PUERTA_0, PRECIO_HABITACION_VALIDO,2, 3,0);
 
-        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci髇=%s, habitaci髇 triple, capacidad=%d personas, " +
-                        "ba駉s=%d, camas individuales=%d, camas dobles=%d",
+        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci贸n=%s, habitaci贸n triple, capacidad=%d personas, " +
+                        "ba帽os=%d, camas individuales=%d, camas dobles=%d",
                 habitacion.getIdentificador(), habitacion.getPlanta(), habitacion.getPuerta(), habitacion.getPrecio(),
                 habitacion.getNumeroMaximoPersonas(),habitacion.getNumBanos(),habitacion.getNumCamasIndividuales(),habitacion.getNumCamasDobles()), habitacion.toString(), CADENA_NO_ESPERADA);
     }
@@ -432,15 +432,15 @@ public class HabitacionTest {
     public void toStringDevuelveLaCadenaEsperadaHabitacionSuite() {
         Suite habitacion = new Suite(PLANTA_1, PUERTA_0, PRECIO_HABITACION_VALIDO,2, true);
 
-        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci髇=%s, habitaci髇 suite, capacidad=%d personas, " +
-                        "ba駉s=%d, con Jacuzzi",
+        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci贸n=%s, habitaci贸n suite, capacidad=%d personas, " +
+                        "ba帽os=%d, con Jacuzzi",
                 habitacion.getIdentificador(), habitacion.getPlanta(), habitacion.getPuerta(), habitacion.getPrecio(),
                 habitacion.getNumeroMaximoPersonas(),habitacion.getNumBanos()), habitacion.toString(), CADENA_NO_ESPERADA);
 
         habitacion = new Suite(PLANTA_1, PUERTA_0, PRECIO_HABITACION_VALIDO,2, false);
 
-        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci髇=%s, habitaci髇 suite, capacidad=%d personas, " +
-                        "ba駉s=%d, sin Jacuzzi",
+        assertEquals(String.format("identificador=%s (%d-%d), precio habitaci贸n=%s, habitaci贸n suite, capacidad=%d personas, " +
+                        "ba帽os=%d, sin Jacuzzi",
                 habitacion.getIdentificador(), habitacion.getPlanta(), habitacion.getPuerta(), habitacion.getPrecio(),
                 habitacion.getNumeroMaximoPersonas(),habitacion.getNumBanos()), habitacion.toString(), CADENA_NO_ESPERADA);
     }

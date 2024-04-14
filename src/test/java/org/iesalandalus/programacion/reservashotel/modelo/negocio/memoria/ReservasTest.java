@@ -24,11 +24,11 @@ public class ReservasTest {
     private static Reserva reserva3;
     private static Reserva reservaRepetida1;
 
-    private static final String NOMBRE_JRJR = "JosÈ RamÛn JimÈnez Reyes";
+    private static final String NOMBRE_JRJR = "Jos√© Ram√≥n Jim√©nez Reyes";
     private static final String DNI_JRJR = "11223344B";
     private static final String TELEFONO_JRJR = "950112233";
     private static final String CORREO_JRJR = "joseramon.jimenez@iesalandalus.org";
-    private static final String NOMBRE_ARDR = "AndrÈs Rubio Del RÌo";
+    private static final String NOMBRE_ARDR = "Andr√©s Rubio Del R√≠o";
     private static final String DNI_ARDR = "22334455Y";
     private static final String TELEFONO_ARDR = "666223344";
     private static final String CORREO_ARDR = "andres.rubio@iesalandalus.org";
@@ -56,27 +56,27 @@ public class ReservasTest {
     private static final LocalDate FECHA_INICIO_FUTURA_VALIDA=LocalDate.now().plusDays(3);
     private static final LocalDate FECHA_FIN_FUTURA_VALIDA=FECHA_INICIO_FUTURA_VALIDA.plusDays(7);
 
-    private static final String RESERVAS_NO_CREADAS = "DeberÌa haber creado las reservas correctamente.";
-    private static final String TAMANO_NO_ESPERADO = "El tamaÒo devuelto no es el esperado.";
-    private static final String OPERACION_NO_PERMITIDA = "DeberÌa haber saltado una excepciÛn indicando que dicha operaciÛn no est· permitida.";
-    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepciÛn no es correcto.";
-    private static final String TIPO_EXCEPCION_NO_CORRECTO = "El tipo de la excepciÛn no es correcto.";
-    private static final String EXCEPCION_NO_PROCEDE = "No deberÌa haber saltado la excepciÛn.";
-    private static final String RESERVA_NO_ESPERADA = "La reserva devuelta no es la que deberÌa ser.";
+    private static final String RESERVAS_NO_CREADAS = "Deber√≠a haber creado las reservas correctamente.";
+    private static final String TAMANO_NO_ESPERADO = "El tama√±o devuelto no es el esperado.";
+    private static final String OPERACION_NO_PERMITIDA = "Deber√≠a haber saltado una excepci√≥n indicando que dicha operaci√≥n no est√° permitida.";
+    private static final String MENSAJE_EXCEPCION_NO_CORRECTO = "El mensaje devuelto por la excepci√≥n no es correcto.";
+    private static final String TIPO_EXCEPCION_NO_CORRECTO = "El tipo de la excepci√≥n no es correcto.";
+    private static final String EXCEPCION_NO_PROCEDE = "No deber√≠a haber saltado la excepci√≥n.";
+    private static final String RESERVA_NO_ESPERADA = "La reserva devuelta no es la que deber√≠a ser.";
 
     private static final String REFERENCIA_NO_ESPERADA = "La referencia devuelta es la misma que la pasada.";
-    private static final String OPERACION_NO_REALIZADA = "La operaciÛn no la ha realizado correctamente.";
-    private static final String RESERVA_NULA = "DeberÌa haber saltado una excepciÛn indicando que no se puede operar con una reserva nula.";
+    private static final String OPERACION_NO_REALIZADA = "La operaci√≥n no la ha realizado correctamente.";
+    private static final String RESERVA_NULA = "Deber√≠a haber saltado una excepci√≥n indicando que no se puede operar con una reserva nula.";
     private static final String ERROR_INSERTAR_RESERVA_NULA = "ERROR: No se puede insertar una reserva nula.";
     private static final String ERROR_RESERVA_EXISTE = "ERROR: Ya existe una reserva igual.";
     private static final String ERROR_RESERVA_BORRAR_NO_EXISTE = "ERROR: No existe ninguna reserva como la indicada.";
     private static final String ERROR_BORRAR_RESERVA_NULA = "ERROR: No se puede borrar una reserva nula.";
-    private static final String RESERVAS_HUESPED_NULO="DeberÌa haber saltado una excepciÛn indicando que no se puede operar con un huÈsped nulo.";
-    private static final String ERROR_RESERVAS_HUESPED_NULO="ERROR: No se pueden buscar reservas de un huÈsped nulo.";
-    private static final String RESERVAS_TIPO_HABITACION_NULA="DeberÌa haber saltado una excepciÛn indicando que no se puede operar con un tipo de habitaciÛn nula.";
-    private static final String ERROR_RESERVAS_TIPO_HABITACION_NULA="ERROR: No se pueden buscar reservas de un tipo de habitaciÛn nula.";
-    private static final String RESERVAS_HABITACION_NULA="DeberÌa haber saltado una excepciÛn indicando que no se puede operar con una habitaciÛn nula.";
-    private static final String ERROR_RESERVAS_HABITACION_NULA="ERROR: No se pueden buscar reservas de una habitaciÛn nula.";
+    private static final String RESERVAS_HUESPED_NULO="Deber√≠a haber saltado una excepci√≥n indicando que no se puede operar con un hu√©sped nulo.";
+    private static final String ERROR_RESERVAS_HUESPED_NULO="ERROR: No se pueden buscar reservas de un hu√©sped nulo.";
+    private static final String RESERVAS_TIPO_HABITACION_NULA="Deber√≠a haber saltado una excepci√≥n indicando que no se puede operar con un tipo de habitaci√≥n nula.";
+    private static final String ERROR_RESERVAS_TIPO_HABITACION_NULA="ERROR: No se pueden buscar reservas de un tipo de habitaci√≥n nula.";
+    private static final String RESERVAS_HABITACION_NULA="Deber√≠a haber saltado una excepci√≥n indicando que no se puede operar con una habitaci√≥n nula.";
+    private static final String ERROR_RESERVAS_HABITACION_NULA="ERROR: No se pueden buscar reservas de una habitaci√≥n nula.";
 
     private static final String MENSAJE_ERROR_BUSCAR_RESERVA_NULA = "ERROR: No se puede buscar una reserva nula.";
 
