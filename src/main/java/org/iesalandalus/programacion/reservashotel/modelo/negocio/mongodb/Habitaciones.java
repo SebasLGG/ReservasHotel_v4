@@ -62,18 +62,23 @@ public class Habitaciones implements IHabitaciones {
     }
 
     
-    // Método que inserta una habitacion en la lista si no existe.
+    // Método que inserta una habitacion en la lista si no existe otra con el mismo identificador.
     public void insertar(Habitacion habitacion) throws OperationNotSupportedException {
         if (habitacion == null) {
             throw new NullPointerException("ERROR: No se puede insertar una habitación nula.");
         }
 
-        if (buscar(habitacion) != null) {
+        Document filtro = new Document(MongoDB.IDENTIFICADOR, habitacion.getIdentificador());
+        Document habitacionExistente = coleccionHabitaciones.find(filtro).first();
+        if (habitacionExistente != null) {
             throw new OperationNotSupportedException("ERROR: Ya existe una habitación con ese identificador.");
         }
 
         coleccionHabitaciones.insertOne(MongoDB.getDocumento(habitacion));
+        System.out.println("Habitación insertada correctamente.");
     }
+
+
 
     // Método que busca una habitacion en la lista por identificador y tipo.
     public Habitacion buscar(Habitacion habitacion) {
@@ -94,19 +99,38 @@ public class Habitaciones implements IHabitaciones {
     }
 
 
-    // Método para borrar una habitacion de la lista por planta, puerta y tipo de habitación.
+ // Método para borrar una habitacion de la lista por planta, puerta y tipo de habitación.
     public void borrar(Habitacion habitacion) throws OperationNotSupportedException {
         if (habitacion == null) {
             throw new NullPointerException("ERROR: No se puede borrar una habitación nula.");
         }
 
+        // Verificamos si la habitación tiene reservas asociadas
+        Reservas reservas = new Reservas();
+        reservas.comenzar();
+        List<Reserva> reservasHabitacion = reservas.getReservas(habitacion);
+
+        // Si la habitación tiene reservas asociadas, lanzamos una excepción
+        if (!reservasHabitacion.isEmpty()) {
+            throw new OperationNotSupportedException("ERROR: No se puede borrar la habitación porque tiene reservas asociadas.");
+        }
+
+        // Verificamos si la habitación existe antes de intentar eliminarla
         Document filtro = new Document(MongoDB.IDENTIFICADOR, habitacion.getIdentificador())
                 .append(MongoDB.TIPO, habitacion.getClass().getSimpleName().toUpperCase());
-
-        if (coleccionHabitaciones.deleteOne(filtro).getDeletedCount() == 0) {
+        Document habitacionEncontrada = coleccionHabitaciones.find(filtro).first();
+        if (habitacionEncontrada == null) {
             throw new OperationNotSupportedException("ERROR: No existe ninguna habitación como la indicada.");
         }
+
+        // Si la habitación no tiene reservas asociadas y existe, procedemos a borrarla
+        if (coleccionHabitaciones.deleteOne(filtro).getDeletedCount() == 0) {
+            throw new OperationNotSupportedException("ERROR: No se pudo borrar la habitación.");
+        } else {
+            System.out.println("Habitación eliminada correctamente.");
+        }
     }
+
 
 
     // Método comenzar para obtener la colección de mongoDB de Habitaciones.

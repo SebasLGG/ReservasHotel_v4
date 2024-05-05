@@ -136,7 +136,6 @@ public class Vista {
 	        // Verifica si el huésped existe antes de intentar eliminarlo
 	        if (this.controlador.buscar(huesped) != null) {
 	            this.controlador.borrar(huesped);
-	            System.out.println("Huésped eliminado correctamente.");
 	        } else {
 	            System.out.println("No se encontró un huésped con los datos proporcionados.");
 	        }
@@ -169,7 +168,6 @@ public class Vista {
 	    try {
 	        Habitacion habitacion = Consola.leerHabitacion();
 	        this.controlador.insertar(habitacion);
-	        System.out.println("Habitación insertada correctamente.");
 	    } catch (IllegalArgumentException | NullPointerException e) {
 	        System.out.println("Error al insertar la habitación: " + e.getMessage());
 	    
@@ -200,7 +198,6 @@ public class Vista {
 	        // Verifica si la habitación existe antes de intentar eliminarla
 	        if (this.controlador.buscar(habitacion) != null) {
 	            this.controlador.borrar(habitacion);
-	            System.out.println("Habitación eliminada correctamente.");
 	        } else {
 	            System.out.println("No se encontró una habitación con el identificador proporcionado.");
 	        }

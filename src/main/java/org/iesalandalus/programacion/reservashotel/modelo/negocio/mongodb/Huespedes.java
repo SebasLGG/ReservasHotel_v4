@@ -72,17 +72,38 @@ public class Huespedes implements IHuespedes {
     }
 
 
-    // Método para borrar un huesped de la lista.
+ // Método para borrar un huesped de la lista.
     public void borrar(Huesped huesped) throws OperationNotSupportedException {
         if (huesped == null) {
             throw new NullPointerException("ERROR: No se puede borrar un huésped nulo.");
         }
 
-        Document documento = new Document("dni", huesped.getDni());
-        if (coleccionHuespedes.deleteOne(documento).getDeletedCount() == 0) {
+        // Verificamos si el huésped existe antes de intentar eliminarlo
+        Document documentoBusqueda = new Document("dni", huesped.getDni());
+        Document documento = coleccionHuespedes.find(documentoBusqueda).first();
+        if (documento == null) {
             throw new OperationNotSupportedException("ERROR: No existe ningún huésped como el indicado.");
         }
+
+        // Comprobamos si el huésped tiene reservas asociadas
+        Reservas reservas = new Reservas();
+        reservas.comenzar();
+        List<Reserva> reservasHuesped = reservas.getReservas(huesped);
+
+        // Si el huésped tiene reservas asociadas, lanzamos una excepción
+        if (!reservasHuesped.isEmpty()) {
+            throw new OperationNotSupportedException("ERROR: No se puede borrar el huésped porque tiene reservas asociadas.");
+        }
+
+        // Si el huésped no tiene reservas asociadas y existe, procedemos a borrarlo
+        if (coleccionHuespedes.deleteOne(documentoBusqueda).getDeletedCount() == 0) {
+            throw new OperationNotSupportedException("ERROR: No se pudo borrar el huésped.");
+        } else {
+            System.out.println("Huésped eliminado correctamente.");
+        }
     }
+
+
     
     // Método para comenzar la colección de huespedes.
     public void comenzar() {

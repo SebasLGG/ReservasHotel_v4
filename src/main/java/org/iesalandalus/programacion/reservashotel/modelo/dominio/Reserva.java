@@ -153,6 +153,7 @@ public class Reserva {
         if (checkIn == null) {
             throw new NullPointerException("ERROR: El checkin de una reserva no puede ser nulo.");
         }
+        //EL CHECKIN SOLO DEJA HACERLO SI LA FECHA ACTUAL ESTA EN EL RANGO DE LA FECHA DE INICIO Y FECHA DE FIN DE LA RESERVA
         if (checkIn.isBefore(fechaInicioReserva.atStartOfDay())) {
             throw new IllegalArgumentException("ERROR: El checkin de una reserva no puede ser anterior a la fecha de inicio de la reserva.");
         }
@@ -164,6 +165,7 @@ public class Reserva {
         return checkOut;
     }
 
+    //EL CHECKOUT SOLO DEJA HACERLO SI LA FECHA ACTUAL ESTA EN EL RANGO DE LA FECHA DE INICIO Y FECHA DE FIN DE LA RESERVA
     // Método para establecer el check-out de la reserva
     public void setCheckOut(LocalDateTime checkOut) {
         if (checkOut == null) {
